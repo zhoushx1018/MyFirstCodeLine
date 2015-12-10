@@ -4,12 +4,14 @@ package com.example.zhoushx.activitytest;
  * Created by zhoushx on 2015/12/9.
  */
 
-        import android.os.Bundle;
-        import android.app.Activity;
-        import android.view.View;
-        import android.view.Window;
-        import android.widget.Button;
-        import android.widget.Toast;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class FirstActivity extends Activity {
     @Override
@@ -26,5 +28,29 @@ public class FirstActivity extends Activity {
                         Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+
+        Toast.makeText(FirstActivity.this, "onCreateOptionsMenu _____________________________",
+                Toast.LENGTH_LONG).show();
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.add_item:
+                Toast.makeText(this, "You clicked Add", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.remove_item:
+                Toast.makeText(this, "You clicked Remove", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+        }
+        return true;
     }
 }
