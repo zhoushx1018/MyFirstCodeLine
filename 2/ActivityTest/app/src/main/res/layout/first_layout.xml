@@ -29,4 +29,10 @@
         android:layout_height="wrap_content"
         android:text="向 SecondActivity 发送数据" />
 
+    <Button
+        android:id="@+id/button_sendToSccondActivity_forResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="向 SecondActivity 发送数据，并能接收 SecondActivity的应答" />
+
 </LinearLayout>

@@ -8,5 +8,5 @@
         android:id="@+id/button_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button 2" />
+        android:text="接收 数据,并返回 result" />
 </LinearLayout>
