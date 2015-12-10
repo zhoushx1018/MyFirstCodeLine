@@ -17,6 +17,10 @@ public class FirstActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Toast.makeText(FirstActivity.this, "onCreate 1111111111",
+                Toast.LENGTH_LONG).show();
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.first_layout);
 
@@ -28,13 +32,21 @@ public class FirstActivity extends Activity {
                         Toast.LENGTH_LONG).show();
             }
         });
+
+        Button button2 = (Button) findViewById(R.id.button_2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
 
-        Toast.makeText(FirstActivity.this, "onCreateOptionsMenu _____________________________",
+        Toast.makeText(FirstActivity.this, "onCreateOptionsMenu 22222222222222",
                 Toast.LENGTH_LONG).show();
 
         return true;
