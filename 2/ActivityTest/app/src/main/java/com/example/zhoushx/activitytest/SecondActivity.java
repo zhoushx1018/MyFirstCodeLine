@@ -1,7 +1,9 @@
 package com.example.zhoushx.activitytest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.widget.Toast;
 
@@ -16,6 +18,14 @@ public class SecondActivity extends Activity {
         setContentView(R.layout.second_layout);
 
         Toast.makeText(SecondActivity.this, "onCreate 222222222 SecondActivity",
-                Toast.LENGTH_LONG).show();
+                Toast.LENGTH_SHORT).show();
+
+
+        Intent intent = getIntent();
+        String strData = intent.getStringExtra("extra_data");
+
+        Toast.makeText(SecondActivity.this, "recv data=" + strData,
+                Toast.LENGTH_SHORT).show();
+
     }
 }

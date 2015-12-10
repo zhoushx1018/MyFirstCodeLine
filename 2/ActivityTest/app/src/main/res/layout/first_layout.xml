@@ -23,4 +23,10 @@
         android:layout_height="wrap_content"
         android:text="打电话, 10086 " />
 
+    <Button
+        android:id="@+id/button_sendToSccondActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="向 SecondActivity 发送数据" />
+
 </LinearLayout>

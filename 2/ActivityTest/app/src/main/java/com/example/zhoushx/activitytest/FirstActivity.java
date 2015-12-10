@@ -71,6 +71,17 @@ public class FirstActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button button4 = (Button) findViewById(R.id.button_sendToSccondActivity);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String data = "Hello SecondActivity";
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                intent.putExtra("extra_data", data);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
