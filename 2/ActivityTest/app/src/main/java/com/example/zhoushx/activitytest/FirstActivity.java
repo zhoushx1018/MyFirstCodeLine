@@ -4,6 +4,7 @@ package com.example.zhoushx.activitytest;
  * Created by zhoushx on 2015/12/9.
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -28,8 +29,12 @@ public class FirstActivity extends Activity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(FirstActivity.this, "You clicked Button 1",
-                        Toast.LENGTH_LONG).show();
+//                Toast.makeText(FirstActivity.this, "You clicked Button 1",
+//                        Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                startActivity(intent);
+
+
             }
         });
 
