@@ -5,6 +5,7 @@ package com.example.zhoushx.activitytest;
  */
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -33,20 +34,23 @@ public class FirstActivity extends Activity {
 //                        Toast.LENGTH_LONG).show();
 //                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
 //                Intent intent = new Intent("com.example.zhoushx.activitytest.ACTION_START");
-                Intent intent = new Intent("com.example.zhoushx.activitytest.ACTION_START");
-                intent.addCategory("com.example.activitytest.MY_CATEGORY");
+//                Intent intent = new Intent("com.example.zhoushx.activitytest.ACTION_START");
+//                intent.addCategory("com.example.activitytest.MY_CATEGORY");
+//
+//                try {
+//                    startActivity(intent);
+//                } catch (Exception e) {
+//                    Toast.makeText(FirstActivity.this, "catch error"+ e.toString(),
+//                            Toast.LENGTH_LONG).show();
+//
+//                } finally {
+//                    Toast.makeText(FirstActivity.this, "finally error",
+//                            Toast.LENGTH_LONG).show();
+//                }
 
-                try {
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Toast.makeText(FirstActivity.this, "catch error"+ e.toString(),
-                            Toast.LENGTH_LONG).show();
-
-                } finally {
-                    Toast.makeText(FirstActivity.this, "finally error",
-                            Toast.LENGTH_LONG).show();
-                }
-
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://www.baidu.com"));
+                startActivity(intent);
             }
         });
 
@@ -55,6 +59,16 @@ public class FirstActivity extends Activity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        Button button3 = (Button) findViewById(R.id.button_dial);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:10086"));
+                startActivity(intent);
             }
         });
     }
