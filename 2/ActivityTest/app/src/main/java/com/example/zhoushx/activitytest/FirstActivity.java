@@ -52,6 +52,9 @@ public class FirstActivity extends Activity {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("http://www.baidu.com"));
                 startActivity(intent);
+
+                Log.d(getPackageName() + "|" + getLocalClassName(), "button_1 onClick");
+
             }
         });
 

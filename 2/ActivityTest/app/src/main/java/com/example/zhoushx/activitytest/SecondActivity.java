@@ -29,6 +29,9 @@ public class SecondActivity extends Activity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Log.d(getPackageName() + "|" + getLocalClassName(), "button_2 onClick");
+
                 dealIntent();
                 finish();
             }
