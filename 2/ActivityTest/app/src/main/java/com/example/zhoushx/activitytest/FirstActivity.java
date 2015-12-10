@@ -31,9 +31,21 @@ public class FirstActivity extends Activity {
             public void onClick(View v) {
 //                Toast.makeText(FirstActivity.this, "You clicked Button 1",
 //                        Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+//                Intent intent = new Intent("com.example.zhoushx.activitytest.ACTION_START");
+                Intent intent = new Intent("com.example.zhoushx.activitytest.ACTION_START");
+                intent.addCategory("com.example.activitytest.MY_CATEGORY");
 
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Toast.makeText(FirstActivity.this, "catch error"+ e.toString(),
+                            Toast.LENGTH_LONG).show();
+
+                } finally {
+                    Toast.makeText(FirstActivity.this, "finally error",
+                            Toast.LENGTH_LONG).show();
+                }
 
             }
         });
