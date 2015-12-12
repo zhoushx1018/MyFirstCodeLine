@@ -113,6 +113,14 @@ public class FirstActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+
+        Button button7 = (Button) findViewById(R.id.button_sendToSccondActivity_staticFunc);
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SecondActivity.actionStart(FirstActivity.this, "111111", "22222");
+            }
+        });
     }
 
     @Override
