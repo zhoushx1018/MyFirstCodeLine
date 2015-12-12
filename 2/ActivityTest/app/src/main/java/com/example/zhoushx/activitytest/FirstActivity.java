@@ -17,8 +17,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class FirstActivity extends Activity {
+
+    private String TAG;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TAG = this.toString();
+
         super.onCreate(savedInstanceState);
 
         Toast.makeText(FirstActivity.this, "onCreate 1111111111",
@@ -53,7 +58,7 @@ public class FirstActivity extends Activity {
                 intent.setData(Uri.parse("http://www.baidu.com"));
                 startActivity(intent);
 
-                Log.d(getPackageName() + "|" + getLocalClassName(), "button_1 onClick");
+                Log.d(TAG, "button_1 onClick");
 
             }
         });
@@ -95,6 +100,16 @@ public class FirstActivity extends Activity {
                 Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
                 intent.putExtra("extra_data", data);
                 startActivityForResult(intent, 1);
+            }
+        });
+
+        Log.d(TAG, "启动活动，intent 指向自己， 创建按键 事件");
+        Button button6 = (Button) findViewById(R.id.button_startActivity_intentToSelf);
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, FirstActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -142,5 +157,11 @@ public class FirstActivity extends Activity {
         }
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart");
+    }
 
 }
