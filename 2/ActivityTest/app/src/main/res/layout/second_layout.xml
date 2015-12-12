@@ -14,7 +14,7 @@
         android:id="@+id/button_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="启动活动，intent 目标为 FirstActivity" />
+        android:text="启动活动，intent 目标为 ThirdActivity" />
 
 
 </LinearLayout>

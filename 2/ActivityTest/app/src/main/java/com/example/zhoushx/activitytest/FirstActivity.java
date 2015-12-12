@@ -81,6 +81,7 @@ public class FirstActivity extends Activity {
             }
         });
 
+        Log.d(TAG, "Task=" + getTaskId());
         Button button4 = (Button) findViewById(R.id.button_sendToSccondActivity);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override

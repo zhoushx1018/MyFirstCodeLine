@@ -42,12 +42,13 @@ public class SecondActivity extends Activity {
         });
 
 
+        Log.d(TAG, "Task=" + getTaskId());
         //按键
         Button button2 = (Button) findViewById(R.id.button_2);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this,FirstActivity.class);
+                Intent intent = new Intent(SecondActivity.this,ThirdActivity.class);
                 startActivity(intent);
             }
         });
