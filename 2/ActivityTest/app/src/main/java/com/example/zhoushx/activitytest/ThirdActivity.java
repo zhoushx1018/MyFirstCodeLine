@@ -8,13 +8,13 @@ import android.view.Window;
 /**
  * Created by zhoushx on 2015/12/10.
  */
-public class ThirdActivity extends Activity {
+public class ThirdActivity extends BaseActivity {
 
     private String TAG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TAG = this.toString();
+        TAG = "TAG_" + this.toString().substring(this.toString().lastIndexOf('.') + 1);
 
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);

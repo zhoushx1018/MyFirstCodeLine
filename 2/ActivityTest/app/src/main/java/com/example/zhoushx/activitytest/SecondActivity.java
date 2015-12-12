@@ -12,13 +12,13 @@ import android.widget.Toast;
 /**
  * Created by zhoushx on 2015/12/10.
  */
-public class SecondActivity extends Activity {
+public class SecondActivity extends BaseActivity {
 
     private String TAG;
 
     @Override
     protected void onCreate(Bundle saved) {
-        TAG = this.toString();
+        TAG = "TAG_" + this.toString().substring(this.toString().lastIndexOf('.') + 1);
 
         super.onCreate(saved);
         requestWindowFeature(Window.FEATURE_NO_TITLE);

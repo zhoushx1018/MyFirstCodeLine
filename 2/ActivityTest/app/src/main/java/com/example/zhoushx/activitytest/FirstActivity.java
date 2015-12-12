@@ -16,13 +16,13 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class FirstActivity extends Activity {
+public class FirstActivity extends BaseActivity {
 
     private String TAG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TAG = this.toString();
+        TAG = "TAG_" + this.toString().substring(this.toString().lastIndexOf('.') + 1);
 
         super.onCreate(savedInstanceState);
 
