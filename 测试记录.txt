@@ -1,0 +1,13 @@
+
+
+
+2.5.2 singleTop
+	singleTop
+		startActivity intent 指向自己
+			会执行 onPause,onStop
+	
+		按返回键
+			会执行
+			 onPause,onStop, onDestroy
+	
+	
