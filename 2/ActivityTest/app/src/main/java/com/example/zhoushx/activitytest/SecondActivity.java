@@ -14,8 +14,12 @@ import android.widget.Toast;
  */
 public class SecondActivity extends Activity {
 
+    private String TAG;
+
     @Override
     protected void onCreate(Bundle saved) {
+        TAG = this.toString();
+
         super.onCreate(saved);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.second_layout);
@@ -69,4 +73,12 @@ public class SecondActivity extends Activity {
 
         setResult(RESULT_OK, intent);
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy");
+    }
+
 }

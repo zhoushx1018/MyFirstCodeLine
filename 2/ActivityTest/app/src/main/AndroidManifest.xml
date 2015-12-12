@@ -12,7 +12,7 @@
 
         <activity
             android:name=".FirstActivity"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:label="我的地盘 听我的FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
