@@ -25,8 +25,8 @@ public class SecondActivity extends Activity {
 
 
         //按键
-        Button button2 = (Button) findViewById(R.id.button_2);
-        button2.setOnClickListener(new View.OnClickListener() {
+        Button button1 = (Button) findViewById(R.id.button_1);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -34,6 +34,17 @@ public class SecondActivity extends Activity {
 
                 dealIntent();
                 finish();
+            }
+        });
+
+
+        //按键
+        Button button2 = (Button) findViewById(R.id.button_2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SecondActivity.this,FirstActivity.class);
+                startActivity(intent);
             }
         });
     }
